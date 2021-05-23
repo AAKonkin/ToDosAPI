@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 app.use('/api', routes)
 app.use(express.urlencoded);
+
 mongoose.connect(config.get('DB_URL'), {
     useUnifiedTopology: true,
     useNewUrlParser: true,
@@ -15,4 +16,5 @@ mongoose.connect(config.get('DB_URL'), {
     useFindAndModify: false
 });
 mongoose.connection.on('connected', () => console.log('ALREADY_CONNECTED_TO_DB'));
+
 app.listen(PORT, console.log(`ToDo SERVER START WORKING AT PORT: ${PORT}`));
