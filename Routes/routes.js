@@ -1,7 +1,5 @@
 import Router from 'express';
 import todoController from '../Controller/todoController.js';
-//import bodyParser from 'body-parser'; urlencoded,
-//const urlencoded = bodyParser.urlencoded({extended:false});
 
 const route = new Router();
 route.post('/todo', todoController.addNew);
